@@ -3,11 +3,12 @@ import { Food } from '../../../shared/models/Food';
 import { FoodService } from '../../../services/food.service';
 import { NgModule } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule, ActivatedRoute } from '@angular/router';
+import { SearchComponent } from "../../partials/search/search.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, RouterLink, NgFor],
+  imports: [RouterModule, RouterLink, NgFor, SearchComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -15,8 +16,14 @@ export class HomeComponent implements OnInit {
   
   foods:Food[] = [];
 
-  constructor(private foodService:FoodService) {
-    this.foods = this.foodService.getAll();
+  constructor(private foodService:FoodService, activatedRoute:ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      if (params['searchTerm']) {
+        this.foods = this.foodService.getAllFoodsBySearchTerm(params['searchTerm']);
+      } else {
+        this.foods = foodService.getAll();
+      }
+    })
   }
 
   ngOnInit(): void {
