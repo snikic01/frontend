@@ -14,7 +14,7 @@ export const routes: Routes = [
     //ruta za stranicu odabrane hrane
     {path: 'food/:id', component: FoodPageComponent},
     //ruta za cart-page komponentu
-    {path: 'cart-page', component: CartPageComponent},
+    {path: 'cart-page', component: CartPageComponent}
 
 ];
 
