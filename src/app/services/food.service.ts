@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Food } from '../shared/models/Food';
 import { sample_foods, sample_tags } from '../../data';
+import { Tag } from '../shared/models/Tag';
 
 @Injectable({
   providedIn: 'root'
@@ -17,14 +18,14 @@ getAllFoodsBySearchTerm(searchTerm: string): Food[] {
     return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()));
 }
 //Dodavanje Tag metode
-getAllTags(): typeof sample_tags {
+getAllTags(): Tag[] {
   return sample_tags;
 }
 
 //Proverava da li je Tag INKLUDOVAN
-getAllFoodsByTag(tag: string): Food[] {
-  return tag === 'All'?
-  this.getAll() :
+getAllFoodsByTag(tag:string):Food[] {
+  return tag == 'All'?
+  this.getAll():
   this.getAll().filter(food => food.tags?.includes(tag));
 
 }
