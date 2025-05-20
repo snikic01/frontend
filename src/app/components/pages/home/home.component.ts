@@ -5,17 +5,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { RouterLink, RouterModule, ActivatedRoute } from '@angular/router';
 import { SearchComponent } from "../../partials/search/search.component";
+import { TagsComponent } from '../../partials/tags/tags.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, RouterLink, NgFor, SearchComponent],
+  imports: [RouterModule, RouterLink, NgFor, SearchComponent, TagsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   
   foods:Food[] = [];
-
   constructor(private foodService:FoodService, activatedRoute:ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) 
