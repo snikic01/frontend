@@ -29,4 +29,9 @@ getAllFoodsByTag(tag:string):Food[] {
   this.getAll().filter(food => food.tags?.includes(tag));
 
 }
+//Dodavanje metode za stranicu odabrane hrane
+getFoodById(foodId: string): Food {
+  return this.getAll().find(food => food.id == foodId) ?? new Food();
+}
+
 }
