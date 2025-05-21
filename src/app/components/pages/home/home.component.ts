@@ -6,10 +6,12 @@ import { CommonModule, NgFor } from '@angular/common';
 import { RouterLink, RouterModule, ActivatedRoute } from '@angular/router';
 import { SearchComponent } from "../../partials/search/search.component";
 import { TagsComponent } from '../../partials/tags/tags.component';
+import { NotFound } from '@angular/core/primitives/di';
+import { NotFoundComponent } from '../../partials/not-found/not-found.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, RouterLink, NgFor, SearchComponent, TagsComponent],
+  imports: [RouterModule, RouterLink, NgFor, SearchComponent, TagsComponent, NotFoundComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
