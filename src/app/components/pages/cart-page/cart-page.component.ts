@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../../services/cart.service';
+import { Cart } from '../../../shared/models/Cart';
+import { CartItem } from '../../../shared/models/CartItem';
 
 @Component({
   selector: 'app-cart-page',
@@ -6,6 +9,26 @@ import { Component } from '@angular/core';
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.css'
 })
-export class CartPageComponent {
+export class CartPageComponent implements OnInit{
 
+  cart!: Cart;
+  constructor(private cartService: CartService) {
+    //f-cija za update cart-a iznad
+    this.cartService.getCartObservable().subscribe((cart) => {
+      this.cart = cart;
+    });
+  }
+
+  ngOnInit(): void {
+    // Initialization logic can go here
+  }
+
+  removeFromCart(CartItem: CartItem) {
+    this.cartService.removeFromCart(CartItem.food.id);
+  }
+
+  changeQuantity(CartItem: CartItem, quantityInString: string) {
+    const qantity = parseInt(quantityInString);
+    this.cartService.ChangeQuantity(CartItem.food.id, qantity);
+}
 }
