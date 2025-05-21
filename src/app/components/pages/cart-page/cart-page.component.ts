@@ -5,10 +5,11 @@ import { CartItem } from '../../../shared/models/CartItem';
 import { TitleComponent } from "../../partials/title/title.component";
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { NotFoundComponent } from "../../partials/not-found/not-found.component";
 
 @Component({
   selector: 'app-cart-page',
-  imports: [TitleComponent, RouterLink, NgIf, NgFor, CurrencyPipe],
+  imports: [TitleComponent, RouterLink, NgIf, NgFor, CurrencyPipe, NotFoundComponent],
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.css'
 })
