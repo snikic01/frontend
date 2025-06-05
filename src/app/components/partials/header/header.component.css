@@ -1,24 +1,35 @@
 header{
   position: relative;
-  background: white;
-  padding: 0;
-  border-bottom: 1px solid rgba(255, 0, 0, 0.6);
+  background: black;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 a{
-  color: rgba(49, 75, 0, 0.562);
+  color: whitesmoke;
+  background-color: rgba(167, 74, 255, 0.473);
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 15%;
+  height: 10%;
 }
 
 a:hover{
-  background:#e729;
-  color: white;
+  background:rgba(66, 116, 255, 0.6);
+  color: whitesmoke;
   cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
 }
 
 .container{
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
 }
 
 a.logo{
@@ -27,19 +38,23 @@ a.logo{
 }
 
 ul{
+  text-align: center;
+  width: 20%;
+  height: 10%;
   display: flex;
   list-style-type: none;
   margin: 0;
 }
 
 ul a{
-  padding: 1rem;
+  padding: 2rem;
   display: inline-block;
+  text-align: center;
 }
 
 a span{
-  background: rgba(167, 108, 0, 0.867);
-  color: white;
+  background: rgba(0, 0, 0, 0.867);
+  color: whitesmoke;
   padding: 0.1rem 0.45rem;
   border-radius: 100rem;
   font-size:0.9rem;
@@ -52,15 +67,18 @@ a span{
 .menu{
   position:absolute;
   z-index:1;
-  background:whitesmoke;
+  background: transparent;
   display: none;
+  padding-top: 5px;
 }
 
 .menu-container:hover .menu{
   display: block;
+  padding-top: 3px;
 }
 
 .menu a{
   width: 100%;
-  min-width:8rem;
+  min-width:15%;
+  padding-top: 5px;
 }

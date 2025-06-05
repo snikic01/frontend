@@ -16,8 +16,19 @@ button{
 
 body{
   margin: 0;
+  background-image: url('/assets/WebsiteBackground.jpg');
+       filter: background-brightness(5%) background-saturate(240%);
+       background-position: relative;
+       height: 100%;
+       background-size: cover;
+       background-repeat: no-repeat;
 }
 
 a{
   text-decoration: none;
+  color: whitesmoke;
+}
+
+h1{
+  color: whitesmoke;
 }

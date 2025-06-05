@@ -24,7 +24,7 @@ getAllTags(): Tag[] {
 
 //Proverava da li je Tag INKLUDOVAN
 getAllFoodsByTag(tag:string):Food[] {
-  return tag == 'All'?
+  return tag == 'Sve'? // Ako je tag 'Sve', vrati sve STAVKE
   this.getAll():
   this.getAll().filter(food => food.tags?.includes(tag));
 

@@ -10,7 +10,7 @@ div{
 
 a{
   font-size: 1.1rem;
-  background-color: #9b0000;
+  background:rgba(167, 74, 255, 0.973);
   color: whitesmoke;
   border-radius: 10rem;
   padding: 0.7rem 1rem;
@@ -19,6 +19,7 @@ a{
 }
 
 a:hover{
+  background-color: rgba(66, 116, 255, 0.9);
   opacity: 1;
   cursor: pointer;
 }

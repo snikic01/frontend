@@ -16,6 +16,7 @@ import { NotFoundComponent } from '../../partials/not-found/not-found.component'
 })
 export class HomeComponent implements OnInit {
   
+  
   foods:Food[] = [];
   constructor(private foodService:FoodService, activatedRoute:ActivatedRoute) {
     activatedRoute.params.subscribe((params) => {

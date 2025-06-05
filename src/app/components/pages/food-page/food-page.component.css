@@ -25,7 +25,9 @@ img{
   flex-direction: column;
   flex:1 0;
   padding: 2rem;
-  color: black;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
   margin-left: 1rem;
 }
 
@@ -59,7 +61,7 @@ img{
   font-size: 1.2rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
   border-radius: 2rem;
-  background-color: aliceblue;
+  background-color: transparent;
 }
 
 .tags{
@@ -68,16 +70,17 @@ img{
 }
 
 .tags a{
-  background-color: #f0f0f0;
-  padding: 0.3rem 1rem;
+  background-color: transparent;
+  padding: 0rem 1rem 1rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 600;
-  color: blue;
+  color: whitesmoke;
+  font-weight: bold;
 }
 
 .cook-time{
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .cook-time span{
@@ -89,17 +92,17 @@ img{
 .price{
   font-size: 1.8rem;
   margin: 2rem 2rem 2rem 0;
-  color: green;
+  color: rgb(117, 255, 117);
 }
 
 .price::before{
   content: "Price: ";
-  color: darkgrey;
+  color: whitesmoke;
 }
 
 button{
-  color: white;
-  background: #e72929;
+  color: whitesmoke;
+  background-color: rgba(167, 74, 255, 0.473);
   border: none;
   font-size: 1.2rem;
   padding: 1rem;
@@ -108,6 +111,7 @@ button{
 }
 
 button:hover{
-  opacity: 0.9;
+  background:rgba(66, 116, 255, 0.6);
+  opacity: 1.5;
   cursor: pointer;
 }

@@ -5,18 +5,18 @@ div {
 }
 
 div a {
-  background-color: #888888;
+  background:rgba(167, 74, 255, 0.973);
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 600;
-  color: rgba(0, 57, 90, 0.822);
+  color: whitesmoke
 }
 
 div a:hover {
-  background-color: #c73232;
+  background-color: rgba(66, 116, 255, 0.9);
 }
 
 a .active {
-  background-color: rgb(151, 5, 5);
+  background-color:rgba(167, 74, 255, 0.973);
 }
