@@ -1,5 +1,6 @@
 import {Food} from './app/shared/models/Food';
 import { Tag } from './app/shared/models/Tag';
+import { User } from './User';
 
 export const sample_foods: Food[] = [
   {
@@ -70,6 +71,8 @@ export const sample_foods: Food[] = [
   },
 ]
 
+//tipovi tagova - dummy data
+
 export const sample_tags:Tag[] = [
   { name: 'Sve', count: 6 },
   { name: 'Akcija', count: 4 },
@@ -80,3 +83,20 @@ export const sample_tags:Tag[] = [
   { name: 'Fikcija', count: 2 },
   { name: 'Naučna fantastika', count: 1 },
 ]
+
+// registrovani useri - dummy data
+
+export const sample_users: User[] = [
+  {
+    id: '1',
+    name: 'Pera Peric',
+    email: 'pera@pera.com',
+    password: '1234',
+  },
+  {
+    id: '2',
+    name: 'Mika Mikić',
+    email: 'mika@mika.com',
+    password: '1234',
+  },
+];

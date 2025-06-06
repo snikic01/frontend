@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { LoginComponent } from './components/pages/login-page/login-page.component';
 
 
 export const routes: Routes = [
@@ -14,7 +15,9 @@ export const routes: Routes = [
     //ruta za stranicu odabrane hrane
     {path: 'food/:id', component: FoodPageComponent},
     //ruta za cart-page komponentu
-    {path: 'cart-page', component: CartPageComponent}
+    {path: 'cart-page', component: CartPageComponent},
+    //ruta za login komponentu
+    {path: 'login-page', component: LoginComponent}
 
 ];
 

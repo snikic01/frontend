@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Cart } from '../../../shared/models/Cart';
 import { CartService } from '../../../services/cart.service';
-import { count } from 'rxjs';
+import { LoginComponent } from '../../pages/login-page/login-page.component';
 
 @Component({
   selector: 'app-header',
