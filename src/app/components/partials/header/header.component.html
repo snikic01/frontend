@@ -8,7 +8,7 @@
                         <a routerLink="./login-page">Login</a>
                     </li>
 
-                    <li class="menu-container">
+                    <li class="menu-container" *ngIf="userLoggedIn">
                         <a routerLink="/dashboard">User</a>
 
                         <div class="menu">
@@ -20,7 +20,7 @@
                     </li>
                     
                     <li>
-                        <a routerLink="./cart-page"> Cart <span>{{cartItemCount}}</span> </a>
+                        <a routerLink="./cart-page" *ngIf="userLoggedIn"> Cart <span>{{cartItemCount}}</span> </a>
                     </li>
 
                 </ul>
