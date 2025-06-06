@@ -9,7 +9,6 @@ header{
 a{
   color: whitesmoke;
   background-color: rgba(167, 74, 255, 0.473);
-  text-align: center;
   font-weight: bold;
   border-radius: 15px;
   width: 15%;
@@ -39,8 +38,6 @@ a.logo{
 
 ul{
   text-align: center;
-  width: 20%;
-  height: 10%;
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -50,14 +47,17 @@ ul a{
   padding: 2rem;
   display: inline-block;
   text-align: center;
+  width: 80%;
+  border: 5px;
 }
 
 a span{
-  background: rgba(0, 0, 0, 0.867);
+  background: rgba(226, 0, 0, 0.867);
   color: whitesmoke;
-  padding: 0.1rem 0.45rem;
   border-radius: 100rem;
   font-size:0.9rem;
+  padding: 2px 3px;
+  text-align: center;
 }
 
 .menu-container{
