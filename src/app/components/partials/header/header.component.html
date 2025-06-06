@@ -5,7 +5,8 @@
                 <ul>
 
                     <li>
-                        <a routerLink="./login-page">Login</a>
+                        <a routerLink="./login-page" *ngIf="!userLoggedIn">Login</a>
+                        <a routerLink="./logout-page" *ngIf="userLoggedIn">Logout</a>
                     </li>
 
                     <li class="menu-container" *ngIf="userLoggedIn">
