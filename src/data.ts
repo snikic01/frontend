@@ -95,8 +95,16 @@ export const sample_users: User[] = [
   },
   {
     id: '2',
-    name: 'Mika Mikić',
+    name: 'Mika Mikic',
     email: 'mika@mika.com',
     password: '1234',
   },
+  {
+    id: '3',
+    name: '1',
+    email: '1',
+    password: '1',
+  },
+
+  
 ];
