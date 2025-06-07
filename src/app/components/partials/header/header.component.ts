@@ -35,14 +35,20 @@ export class HeaderComponent implements OnInit {
     this.cartService.getCartObservable().subscribe((cart: Cart) => {
       this.cartItemCount = cart.totalCount;
       // Proverava da li je korisnik prijavljen i ažurira userLoggedIn
-      //this.userLoggedIn = this.authService.isLoggedIn();
+      this.userLoggedIn = this.authService.isLoggedIn();
     });
   }
 
   // Metoda za navigaciju na pocetnu stranicu
-  logout() {
+  logout(): void {
+    this.router.navigate(['/animacija']).then(() => {
+      setTimeout(() => {
     this.authService.logout();
     this.userLoggedIn = false;
-    this.router.navigate(['/']); // Navigira na početnu stranicu nakon odjave
+    this.router.navigate(['/']);
+    //Navigira na početnu stranicu nakon odjave
+       }, 2500);  //vreme animacije
+      });
   }
+  
 }

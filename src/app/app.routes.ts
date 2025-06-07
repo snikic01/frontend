@@ -6,6 +6,7 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { LoginComponent } from './components/pages/login-page/login-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { Cart } from './shared/models/Cart';
+import { LoadingAnimationComponent } from './components/pages/loading-animation/loading-animation.component';
 
 
 export const routes: Routes = [
@@ -19,7 +20,9 @@ export const routes: Routes = [
     //ruta za cart-page komponentu
     {path: 'cart-page', component: CartPageComponent, canActivate: [AuthGuard]},
     //ruta za login komponentu
-    {path: 'login-page', component: LoginComponent}
+    {path: 'login-page', component: LoginComponent},
+    //ruta za login i logout animaciju
+    { path: 'animacija', component: LoadingAnimationComponent }
 
 ];
 

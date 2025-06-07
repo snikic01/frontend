@@ -25,4 +25,17 @@ export class LoginComponent{
       this.error = 'Pogrešan email ili šifra.';
     }
   }
+
+  onLogin(): void {
+  if (this.authService.login(this.email, this.password)) {
+    this.router.navigate(['/login-animation']).then(() => {
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 2500);
+    });
+  } else {
+    this.error = 'Pogrešan email ili šifra';
+  }
+}
+
 }
