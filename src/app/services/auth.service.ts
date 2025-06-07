@@ -4,10 +4,15 @@ import { User } from '../../User';
 import { sample_users } from '../../data';
 import { BehaviorSubject } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private users: User[] = sample_users;
+  private loggedInUser: User | null = null;
+
+  // Ključ za čuvanje trenutnog korisnika u localStorage
   private currentUserKey = 'currentUser';
 
   // BehaviorSubject za trackovanje trenutnog stanja prijave korisnika
@@ -29,6 +34,7 @@ export class AuthService {
     localStorage.removeItem(this.currentUserKey);
     this.loggedIn.next(false);
   }
+
   isLoggedIn(): boolean {
     return localStorage.getItem(this.currentUserKey) !== null;
   }
@@ -36,6 +42,25 @@ export class AuthService {
   getCurrentUser() {
     return JSON.parse(localStorage.getItem(this.currentUserKey) || 'null') as User | null;
   }
+  
+  register(name: string, email: string, password: string): boolean {
+    if (this.users.find(u => u.email === email)) return false;
+
+    const newUser: User = {
+      name, email, password,
+      id: ''
+    };
+    this.users.push(newUser);
+    this.loggedInUser = newUser; // odmah ga uloguj
+    return true;
+  }
+
+  get currentUser(): User | null {
+    return this.loggedInUser;
+  }
+
+
+
 }
     
 

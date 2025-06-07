@@ -7,6 +7,8 @@ import { LoginComponent } from './components/pages/login-page/login-page.compone
 import { AuthGuard } from './guards/auth.guard';
 import { Cart } from './shared/models/Cart';
 import { LoadingAnimationComponent } from './components/pages/loading-animation/loading-animation.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 export const routes: Routes = [
@@ -22,12 +24,16 @@ export const routes: Routes = [
     //ruta za login komponentu
     {path: 'login-page', component: LoginComponent},
     //ruta za login i logout animaciju
-    { path: 'animacija', component: LoadingAnimationComponent }
+    { path: 'animacija', component: LoadingAnimationComponent },
+    //ruta za registraciju
+    { path: 'register', component: RegisterComponent }
+    //ruta za home komponentu, koja je zaštićena AuthGuard-om
+    //{ path: '', component: HomeComponent, canActivate: [AuthGuard] }
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)], 
-    exports: [RouterModule]
+    exports: [RouterModule, BrowserModule]
 })
 export class AppRoutingModule { }
