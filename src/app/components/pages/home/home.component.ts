@@ -7,11 +7,10 @@ import { RouterLink, RouterModule, ActivatedRoute } from '@angular/router';
 import { SearchComponent } from "../../partials/search/search.component";
 import { TagsComponent } from '../../partials/tags/tags.component';
 import { NotFoundComponent } from '../../partials/not-found/not-found.component';
-import { LoginComponent } from '../login-page/login-page.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, RouterLink, NgFor, SearchComponent, TagsComponent, NotFoundComponent, LoginComponent],
+  imports: [RouterModule, RouterLink, NgFor, SearchComponent, TagsComponent, NotFoundComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

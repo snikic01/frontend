@@ -2,37 +2,41 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../User';
 import { sample_users } from '../../data';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private currentUser: User | null = null;
+  private currentUserKey = 'currentUser';
+
+  // BehaviorSubject za trackovanje trenutnog stanja prijave korisnika
+  private loggedIn = new BehaviorSubject<boolean>(this.getCurrentUser() !== null);
+  public loggedIn$ = this.loggedIn.asObservable();
 
   login(email: string, password: string): boolean {
-    const user = sample_users.find(u => u.email === email && u.password === password);
+    const user = sample_users.find(u => u.email.trim().toLocaleLowerCase() === email.trim().toLocaleLowerCase() && u.password === password);
+    
     if (user) {
-      this.currentUser = user;
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem(this.currentUserKey, JSON.stringify(user));
+      this.loggedIn.next(true);
       return true;
     }
-    return false;
+      return false;
   }
 
-  logout() {
-    this.currentUser = null;
-    localStorage.removeItem('user');
+  logout(): void {
+    localStorage.removeItem(this.currentUserKey);
+    this.loggedIn.next(false);
   }
-
-  getCurrentUser(): User | null {
-    if (!this.currentUser) {
-      const userJson = localStorage.getItem('user');
-      this.currentUser = userJson ? JSON.parse(userJson) : null;
-    }
-    return this.currentUser;
-  }
-
   isLoggedIn(): boolean {
-    return this.getCurrentUser() !== null;
+    return localStorage.getItem(this.currentUserKey) !== null;
+  }
+
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem(this.currentUserKey) || 'null') as User | null;
   }
 }
+    
+
+

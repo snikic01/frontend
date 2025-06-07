@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  //Proverava da li je korisnik prijavljen, u slucaju da nije, preusmerava ga na login stranicu
+  //Proverava da li je korisnik prijavljen, u slucaju
   canActivate(): boolean {
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['./login-page']);

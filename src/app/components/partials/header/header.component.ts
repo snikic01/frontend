@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Cart } from '../../../shared/models/Cart';
 import { CartService } from '../../../services/cart.service';
-import { LoginComponent } from '../../pages/login-page/login-page.component';
 import { NgIf } from '@angular/common';
-import { AuthGuard } from '../../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
+
 
 @Component({
   selector: 'app-header',
@@ -23,14 +22,27 @@ export class HeaderComponent implements OnInit {
   constructor(
     private cartService: CartService,
     //Definisanje AuthService-a
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    // Inicijalizacija brojača korpe i proveravanje da li je korisnik prijavljen
+    this.authService.loggedIn$.subscribe(status => {
+    this.userLoggedIn = status;});
+
+    //this.userLoggedIn = this.authService.isLoggedIn();
     this.cartService.getCartObservable().subscribe((cart: Cart) => {
       this.cartItemCount = cart.totalCount;
       // Proverava da li je korisnik prijavljen i ažurira userLoggedIn
-      this.userLoggedIn = this.authService.isLoggedIn();
+      //this.userLoggedIn = this.authService.isLoggedIn();
     });
+  }
+
+  // Metoda za navigaciju na pocetnu stranicu
+  logout() {
+    this.authService.logout();
+    this.userLoggedIn = false;
+    this.router.navigate(['/']); // Navigira na početnu stranicu nakon odjave
   }
 }
