@@ -19,23 +19,17 @@ export class LoginComponent{
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    if (this.authService.login(this.email, this.password)) {
-      this.router.navigate(['/']); // vrati na početnu stranicu nakon uspešne prijave
-    } else {
-      this.error = 'Pogrešan email ili šifra.';
-    }
-  }
-
-  onLogin(): void {
-  if (this.authService.login(this.email, this.password)) {
-    this.router.navigate(['/login-animation']).then(() => {
+    const success = this.authService.login(this.email, this.password);
+  if (success) {
+    // Prikaz animacije 2 sekunde
+    this.router.navigate(['/animacija']).then(() => {
       setTimeout(() => {
-        this.router.navigate(['/']);
-      }, 2500);
+        this.router.navigate(['/']); // nakon animacije vrati na početnu
+      }, 2000);
     });
   } else {
-    this.error = 'Pogrešan email ili šifra';
-  }
-}
+    this.error = 'Pogrešan email ili lozinka';
 
-}
+      }
+    }
+  }
