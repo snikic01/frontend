@@ -20,6 +20,8 @@ export class AppComponent {
 
 
 @NgModule({
+  declarations: [ 
+  ],
   imports: [
     RegisterComponent,
     BrowserModule,

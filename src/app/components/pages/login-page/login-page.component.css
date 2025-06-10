@@ -1,91 +1,71 @@
-ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
-}
-
-li a{
-  height: 22.5rem;
-  width: 20rem;
-  border: 1px solid whitesmoke;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  color: Whitesmoke;
-  background-color: rgba(0,0,0,0.7);
-}
-
-li a:hover{
-  opacity: 0.9;
-  cursor: pointer;
-}
-
-li a img{
-  object-fit: cover;
-  height: 14.5rem;
-}
-
-.content{
-  margin-top: 0.3rem;
-  padding: 0.5rem 1rem;
-  position: relative;
-  height: 7rem;
-}
-
-.favorite{
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 1.2rem;
-}
-
-.favorite.not{
-  color: grey;
-}
-
-.stars{
-  margin-bottom: 0.2rem;
-}
-
-.product-item-footer{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.origins{
-  flex: 9;
-}
-
-.origins span{
-  border-radius: 2rem;
-  background-color: transparent;
-  display: inline-block;
-  font-size: 0.9rem;
+h2{
+  text-align: center;
   color: whitesmoke;
-  margin-right: 0.3rem;
-  padding: 0 0.5rem;
-  margin-top: 0.2rem;
 }
 
-.cook-time{
-  font-size: 0.9rem;
-  flex: 3;
-  text-align: right;
+form{
+  
+  background-color: rgba(87, 87, 87, 0.3);
+  margin: auto;
+  width: 40%;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 15px;
 }
 
-.price{
-  position: absolute;
-  bottom: 0;
-  left: 0.9rem;
-  background: white;
-  padding: 0.3rem 100% 0 0;
-  color: #414141;
-  margin-top: 0.7rem;
+
+#btn{
+  margin-top: 10px;
+  color: whitesmoke;
+  background-color: rgba(167, 74, 255, 0.473);
+  font-weight: bold;
+  border-radius: 15px;
+  width: 15%;
+  height: 15%;
+}
+
+#btn:hover{
+  background:rgba(66, 116, 255, 0.6);
+  color: whitesmoke;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+#btn2{
+  margin-bottom: 6px;
+  color: whitesmoke;
+  background-color: rgba(167, 74, 255, 0.473);
+  font-weight: bold;
+  border-radius: 15px;
+  width: 35%;
+  height: 15%;
+}
+
+#btn2:hover{
+  background:rgba(66, 116, 255, 0.6);
+  color: whitesmoke;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+input{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10rem 10rem 10rem 10rem;
+  border: none;
+  height: 3rem;
+  width: 13rem;
+  background-color: whitesmoke;
+  padding: 1.2rem;
   font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

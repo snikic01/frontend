@@ -9,6 +9,7 @@ import { Cart } from './shared/models/Cart';
 import { LoadingAnimationComponent } from './components/pages/loading-animation/loading-animation.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { UserInfoComponent } from './components/pages/user-info/user-info.component';
 
 
 export const routes: Routes = [
@@ -26,14 +27,14 @@ export const routes: Routes = [
     //ruta za login i logout animaciju
     { path: 'animacija', component: LoadingAnimationComponent },
     //ruta za registraciju
-    { path: 'register', component: RegisterComponent }
+    { path: `register`, component: RegisterComponent},
     //ruta za home komponentu, koja je zaštićena AuthGuard-om
     //{ path: '', component: HomeComponent, canActivate: [AuthGuard] }
+    { path: 'profil', component: UserInfoComponent }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], 
-    exports: [RouterModule, BrowserModule]
+  imports: [RouterModule.forRoot(routes)]
 })
 export class AppRoutingModule { }

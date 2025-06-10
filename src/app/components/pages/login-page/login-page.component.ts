@@ -3,10 +3,12 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { FormsModule, NgModel } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.css',
   imports: [FormsModule, NgIf, RouterLink]
 }) 
 

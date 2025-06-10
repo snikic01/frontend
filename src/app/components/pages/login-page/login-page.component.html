@@ -1,8 +1,14 @@
-<h2>Prijava</h2>
-<form (ngSubmit)="login()">
-  <input type="email" [(ngModel)]="email" name="email" required placeholder="Email" />
-  <input type="password" [(ngModel)]="password" name="password" required placeholder="Šifra" />
-  <button type="submit">Prijavi se</button>
+<h2 id="naslov">Prijava</h2>
+
+<form id="form" (ngSubmit)="login()">
+  
+  <input id="inputa" type="email" [(ngModel)]="email" name="email" required placeholder="Email" />
+  <br>
+  <input id="inputb" type="password" [(ngModel)]="password" name="password" required placeholder="Šifra" />
+  <br>
+  <button id="btn" type="submit">Prijavi se</button>
+  <br>
   <div *ngIf="error" style="color: red;">{{ error }}</div>
+  <p>Nemate nalog?</p>
+  <button id="btn2" type="button" routerLink="/register">Registrujte se</button>
 </form>
-<p>Nemate nalog? <button type="button" routerLink="/register">Registrujte se ovde</button></p>

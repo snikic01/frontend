@@ -1,0 +1,52 @@
+h2{
+  text-align: center;
+  color: whitesmoke;
+}
+
+form{
+  
+  background-color: rgba(87, 87, 87, 0.3);
+  margin: auto;
+  width: 40%;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  color: whitesmoke;
+  border-radius: 15px;
+}
+
+
+#btn{
+  margin-top: 10px;
+  color: whitesmoke;
+  background-color: rgba(167, 74, 255, 0.473);
+  font-weight: bold;
+  border-radius: 15px;
+  width: 25%;
+  height: 15%;
+}
+
+#btn:hover{
+  background:rgba(66, 116, 255, 0.6);
+  color: whitesmoke;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+input{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10rem 10rem 10rem 10rem;
+  border: none;
+  height: 3rem;
+  width: 13rem;
+  background-color: whitesmoke;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
