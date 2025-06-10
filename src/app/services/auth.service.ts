@@ -48,7 +48,8 @@ export class AuthService {
 
     const newUser: User = {
       name, email, password,
-      id: ''
+      id: '',
+      porudzbine: ''
     };
     this.users.push(newUser);
     this.loggedInUser = newUser; // odmah ga uloguj

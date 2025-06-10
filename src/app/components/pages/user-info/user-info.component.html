@@ -1,12 +1,12 @@
 <h2>Profil korisnika</h2>
 
 <div>
-<p><strong>Ime:</strong> {{ korisnik }}</p>
+<p><strong>Ime:</strong> {{ korisnik.name }}</p>
 <p><strong>Email:</strong> {{ korisnik }}</p>
 
 <h3>Porudžbine</h3>
 <ul>
-  <li *ngFor="let porudzbina of korisnik">
+  <li *ngClass="let porudzbina">
     {{ porudzbina }} - <em>{{ porudzbina }}</em>
   </li>
 </ul>

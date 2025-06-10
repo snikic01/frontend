@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { sample_users } from '../../../../data';
+import { User } from '../../../../User';
 
 @Component({
   standalone: true,
@@ -10,6 +11,6 @@ import { sample_users } from '../../../../data';
   imports: [CommonModule]
 })
 export class UserInfoComponent {
-  korisnik = sample_users;
+  korisnik = User;
 
 }
