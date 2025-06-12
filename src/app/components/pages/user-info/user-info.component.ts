@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { sample_users } from '../../../../data';
 import { CartService } from '../../../services/cart.service';
 import { Food } from '../../../shared/models/Food';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -13,13 +15,30 @@ import { Food } from '../../../shared/models/Food';
   imports: [ CommonModule ],
 })
 export class UserInfoComponent implements OnInit {
-  korisnik = sample_users[0];
+  //prikaz ulogovanog korisnika
+  korisnik = JSON.parse(localStorage.getItem('user') || '{}');
   orders: Food[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService,
+  private authService: AuthService,
+  private router: Router) {}
 
   ngOnInit() {
-    this.orders = this.cartService.getItems();
+    //dobijanje korisnika iz local storage-a
+    const userData = localStorage.getItem('currentUser');
+  if (userData) {
+    this.korisnik = JSON.parse(userData);
+  } else{
+    this.korisnik = null;
+
+  this.orders = this.cartService.getItems();
   }
 }
 
+logout(){
+  this.authService.logout();         //  brise currentUser iz localStorage
+  this.cartService.clearCart();      //  cisti korpu
+  this.router.navigateByUrl('/login-page');  // navigira na login
+}
+
+}

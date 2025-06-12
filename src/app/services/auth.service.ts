@@ -56,6 +56,22 @@ export class AuthService {
     return true;
   }
 
+  //Uslou za prijavu korisnika za user-info stranicu
+  ifUserLogin(email: string, password: string): boolean {
+  const user = sample_users.find(u => u.email === email && u.password === password);
+  if (user) {
+    localStorage.setItem('user', JSON.stringify(user));  // ✅ Sačuvaj ulogovanog
+    return true;
+  }
+  return false;
+}
+
+  ifUserLogout(){
+    localStorage.removeItem('user');
+  }
+
+//Uslov za brisanje korisnika nakon logout-a
+
   get currentUser(): User | null {
     return this.loggedInUser;
   }
