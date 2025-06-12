@@ -4,10 +4,13 @@ import { Cart } from '../shared/models/Cart';
 import { Food } from '../shared/models/Food';
 import { CartItem } from '../shared/models/CartItem';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root'})
 export class CartService {
+
+  private items: Food[] = [];
+  getItems() { return [...this.items]; }
+  addItem(item: Food) { this.items.push(item); }
+  clear() { this.items = []; }
 
   private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);

@@ -1,13 +1,12 @@
 <h2>Profil korisnika</h2>
-
 <div>
 <p><strong>Ime:</strong> {{ korisnik.name }}</p>
-<p><strong>Email:</strong> {{ korisnik }}</p>
+<p><strong>Email:</strong> {{ korisnik.email }}</p>
 
-<h3>Porudžbine</h3>
+<h3>Stavke iz korpe:</h3>
 <ul>
-  <li *ngClass="let porudzbina">
-    {{ porudzbina }} - <em>{{ porudzbina }}</em>
+  <li *ngFor="let item of orders">
+    {{ item.name }} — Cena: {{ item.price }}
   </li>
 </ul>
 </div>

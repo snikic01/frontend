@@ -111,3 +111,5 @@ export const sample_users: User[] = [
 
   
 ];
+export { User };
+
