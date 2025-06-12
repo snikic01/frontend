@@ -5,8 +5,8 @@
 
 <h3>Porudžbine na čekanju:</h3>
 <ul *ngIf="orders.length > 0; else nema">
-  <li *ngFor="let p of orders">
-     {{ p.naziv }} — <em>{{ p.status }}</em> — <strong>Količina:</strong> {{ p.kolicina }}
+  <li *ngFor="let porudzbina of orders">
+     {{ porudzbina.naziv }} — <em>{{ porudzbina.status }}</em> — <strong>Količina:</strong> {{ porudzbina.kolicina }}
   </li>
 </ul>
 

@@ -12,6 +12,10 @@ export class CartService {
   addItem(item: Food) { this.items.push(item); }
   clear() { this.items = []; }
 
+  getCartItems(): CartItem[] {
+  return [...this.cart.items];
+}
+
   private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
   constructor() { }

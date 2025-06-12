@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class UserInfoComponent implements OnInit {
   //prikaz ulogovanog korisnika
-  korisnik = JSON.parse(localStorage.getItem('user') || '{}');
+  korisnik = JSON.parse(localStorage.getItem('currentUser') || '{}');
  // orders: Food[] = [];
   orders: any[] = []
 
@@ -29,6 +29,7 @@ export class UserInfoComponent implements OnInit {
   if (userData) {
     this.korisnik = JSON.parse(userData);
     this.orders = this.korisnik.porudzbine || [];
+    console.log('Porudzbine u user-info:', this.orders);
   } else {
     this.korisnik = null;
     this.orders = [];

@@ -71,7 +71,7 @@ checkout() {
   const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
   if (currentUser) {
-    const cartItems = this.cartService.getItems();
+    const cartItems = this.cartService.getCartItems();
 
     // Dodajemo porudzbine na postojeće
     if (!currentUser.porudzbine) {
@@ -89,7 +89,7 @@ checkout() {
 
     // Ažuriraj localStorage
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
-
+    localStorage.setItem('user', JSON.stringify(currentUser));
     // Isprazni korpu
     this.cartService.clearCart();
 
