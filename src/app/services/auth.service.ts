@@ -44,23 +44,27 @@ export class AuthService {
   }
   
   register(name: string, email: string, password: string): boolean {
-    if (this.users.find(u => u.email === email)) return false;
+  if (this.users.find(u => u.email === email)) return false;
 
-    const newUser: User = {
-      name, email, password,
-      id: '',
-      porudzbine: ''
-    };
-    this.users.push(newUser);
-    this.loggedInUser = newUser; // odmah ga uloguj
-    return true;
-  }
+  const newUser: User = {
+    name,
+    email,
+    password,
+    id: '',
+    porudzbine: []
+  };
+
+  this.users.push(newUser);
+  this.loggedInUser = newUser;
+  return true;
+}
+
 
   //Uslou za prijavu korisnika za user-info stranicu
   ifUserLogin(email: string, password: string): boolean {
   const user = sample_users.find(u => u.email === email && u.password === password);
   if (user) {
-    localStorage.setItem('user', JSON.stringify(user));  // ✅ Sačuvaj ulogovanog
+    localStorage.setItem('user', JSON.stringify(user)); 
     return true;
   }
   return false;

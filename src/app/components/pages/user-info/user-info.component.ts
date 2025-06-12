@@ -16,7 +16,8 @@ import { Router } from '@angular/router';
 export class UserInfoComponent implements OnInit {
   //prikaz ulogovanog korisnika
   korisnik = JSON.parse(localStorage.getItem('user') || '{}');
-  orders: Food[] = [];
+ // orders: Food[] = [];
+  orders: any[] = []
 
   constructor(private cartService: CartService,
   private authService: AuthService,
@@ -28,10 +29,9 @@ export class UserInfoComponent implements OnInit {
   if (userData) {
     this.korisnik = JSON.parse(userData);
     this.orders = this.korisnik.porudzbine || [];
-  } else{
+  } else {
     this.korisnik = null;
-
-  this.orders = this.cartService.getItems();
+    this.orders = [];
   }
 }
 
@@ -39,6 +39,33 @@ logout(){
   this.authService.logout();         //  brise currentUser iz localStorage
   this.cartService.clearCart();      //  cisti korpu
   this.router.navigateByUrl('/login-page');  // navigira na login
+}
+
+//checkout metoda
+checkout() {
+  const userData = localStorage.getItem('currentUser');
+  const cartItems = this.cartService.getItems();
+
+  if (userData && cartItems.length > 0) {
+    const user = JSON.parse(userData);
+
+    if (!user.porudzbine) {
+      user.porudzbine = [];
+    }
+
+    cartItems.forEach(item => {
+      user.porudzbine.push({
+        naziv: item.name,
+        status: 'Na čekanju',
+        kolicina: item.quantity
+      });
+    });
+
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    this.cartService.clearCart();
+
+    this.router.navigateByUrl('/user-info');
+  }
 }
 
 }

@@ -120,7 +120,7 @@ li .remove-button:hover{
   color: rgb(255, 255, 255);
 }
 
-.checkout a{
+.checkout button{
   padding: 1rem;
   color: whitesmoke;
   background:rgba(167, 74, 255, 0.973);
@@ -132,7 +132,7 @@ li .remove-button:hover{
   justify-self: center;
 }
 
-.checkout a:hover{
+.checkout button:hover{
   background-color: rgba(66, 116, 255, 0.9);
   opacity: 1;
   cursor: pointer;
