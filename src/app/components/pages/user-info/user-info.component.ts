@@ -1,7 +1,6 @@
 // src/app/components/pages/user-info/user-info.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { sample_users } from '../../../../data';
 import { CartService } from '../../../services/cart.service';
 import { Food } from '../../../shared/models/Food';
 import { AuthService } from '../../../services/auth.service';
@@ -28,6 +27,7 @@ export class UserInfoComponent implements OnInit {
     const userData = localStorage.getItem('currentUser');
   if (userData) {
     this.korisnik = JSON.parse(userData);
+    this.orders = this.korisnik.porudzbine || [];
   } else{
     this.korisnik = null;
 

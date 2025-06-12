@@ -4,7 +4,7 @@ import { User } from './User';
 
 export const sample_foods: Food[] = [
   {
-    id:'1',
+    id: '1',
     name: 'Mi Nismo Andjeli 1',
     cookTime: '120',
     price: 10,
@@ -13,9 +13,12 @@ export const sample_foods: Food[] = [
     stars: 4.5,
     imageUrl: 'assets/slika1.jpg',
     tags: ['Akcija', 'Komedija', 'Naucna fantastika'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
   {
-    id:'2',
+    id: '2',
     name: 'Orlovi rano lete',
     price: 20,
     cookTime: '90',
@@ -24,9 +27,12 @@ export const sample_foods: Food[] = [
     stars: 4.7,
     imageUrl: 'assets/slika2.jpg',
     tags: ['Komedija', 'Fikcija'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
   {
-    id:'3',
+    id: '3',
     name: 'Leptirica',
     price: 5,
     cookTime: '80',
@@ -35,9 +41,12 @@ export const sample_foods: Food[] = [
     stars: 3.5,
     imageUrl: 'assets/slika3.jpg',
     tags: ['Drama', 'Horor'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
   {
-    id:'4',
+    id: '4',
     name: 'Umri muški 3',
     price: 2,
     cookTime: '120',
@@ -46,9 +55,12 @@ export const sample_foods: Food[] = [
     stars: 3.3,
     imageUrl: 'assets/slika4.jpg',
     tags: ['Akcija', 'Drama', 'Komedija'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
   {
-    id:'5',
+    id: '5',
     name: 'Number 23',
     price: 11,
     cookTime: '100',
@@ -57,9 +69,12 @@ export const sample_foods: Food[] = [
     stars: 3.0,
     imageUrl: 'assets/slika5.jpg',
     tags: ['Horor', 'Akcija', 'Drama', 'Komedija'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
   {
-    id:'6',
+    id: '6',
     name: ' Harry Potter 3',
     price: 9,
     cookTime: '140',
@@ -68,6 +83,9 @@ export const sample_foods: Food[] = [
     stars: 4.0,
     imageUrl: 'assets/slika6.jpg',
     tags: ['Akcija', 'Fikcija', 'Komedija', 'Naučna fantastika'],
+    food: undefined,
+    quantity: undefined,
+    status: undefined
   },
 ]
 

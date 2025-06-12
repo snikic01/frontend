@@ -1,7 +1,7 @@
 // servis za autentifikaciju korisnika
 import { Injectable } from '@angular/core';
 import { User } from '../../User';
-import { sample_users } from '../../data';
+import { sample_users } from '../../data'
 import { BehaviorSubject } from 'rxjs';
 
 

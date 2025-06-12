@@ -30,7 +30,9 @@ export const routes: Routes = [
     { path: `register`, component: RegisterComponent},
     //ruta za home komponentu, koja je zaštićena AuthGuard-om
     //{ path: '', component: HomeComponent, canActivate: [AuthGuard] }
-    { path: 'profil', component: UserInfoComponent }
+    { path: 'profil', component: UserInfoComponent },
+    //ruta za user info
+    { path: 'user-info', component: UserInfoComponent },
 
 ];
 

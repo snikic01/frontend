@@ -3,10 +3,13 @@
 <p><strong>Ime:</strong> {{ korisnik.name }}</p>
 <p><strong>Email:</strong> {{ korisnik.email }}</p>
 
-<h3>Stavke iz korpe:</h3>
-<ul>
-  <li *ngFor="let item of orders">
-    {{ item.name }} — Cena: {{ item.price }}
+<h3>Porudžbine na čekanju:</h3>
+<ul *ngIf="orders.length > 0; else noOrders">
+  <li *ngFor="let p of orders">
+    {{ p.name }} — Količina: {{ p.quantity }} — <em>{{ p.status }}</em>
   </li>
 </ul>
+<ng-template #noOrders>
+  <p>Trenutno nemate porudžbina.</p>
+</ng-template>
 </div>
